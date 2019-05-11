@@ -1,0 +1,24 @@
+
+create database db_cms;
+
+use db_cms;
+
+create table Course (
+coursecode varchar(5) primary key,
+coursename varchar(20),
+coursefees integer,
+coursetype varchar(20));
+
+insert into course values("c1","Java", 20000,"elearning");
+insert into course values("c2",".Net", 10000,"Both");
+insert into course values("c3","Oracle", 15000,"Both");
+insert into course values("c4","Cloud", 30000,"classroom");
+insert into course values("c5","AI", 40000,"classroom");
+
+
+create table EnrollStudent(
+enrollnumber integer primary key auto_increment,
+coursetype varchar(20),
+gender varchar(6),
+studentname varchar(25),
+coursecode varchar(5) references Course(courseCode));
